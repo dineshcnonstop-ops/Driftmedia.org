@@ -17,32 +17,35 @@
   </head>
   <body>
     <!-- Header -->
-    <section class="main">
-      <div
-        class="container py-5 d-flex justify-content-between align-items-center"
-      >
-        <!-- Logo -->
-        <div class="logo d-flex align-items-center">
-          <img src="driftless-media-logo.png" alt="" />
-        </div>
 
-        <!-- Hamburger / Cross -->
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+    <section id="home" class="main">
+      <div class="nav-sec" id="navbar">
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+          <!-- Logo -->
+          <div class="logo d-flex align-items-center">
+            <img src="driftless-media-logo.png" alt="Logo" />
+          </div>
+
+          <!-- Hamburger / Cross -->
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
 
       <!-- Sidebar -->
       <div class="sidebar" id="sidebar">
-        <a href="#">HOME</a>
-        <a href="#">SERVICES</a>
-        <a href="#">PORTFOLIO</a>
-        <a href="#">WHAT TO EXPECT</a>
-        <a href="#">BIOGRAPHY</a>
-        <a href="#">CLIENT</a>
-        <a href="#">CONTACT</a>
+        <a href="#home">HOME</a>
+        <a href="#service">SERVICES</a>
+        <a href="#portfolio">PORTFOLIO</a>
+        <a href="#expect">WHAT TO EXPECT</a>
+        <a href="#about-us">BIOGRAPHY</a>
+        <a href="#clients">CLIENT</a>
+        <a href="#contact">CONTACT</a>
       </div>
 
       <!-- Hero Section -->
@@ -61,7 +64,7 @@
     </section>
 
     <!-- About Us section -->
-    <section id="About-us">
+    <section id="about-us" class="about-us">
       <div class="container about-section">
         <div class="row align-items-start">
           <!-- Left Column -->
@@ -107,7 +110,7 @@
 
     <!-- Service section -->
 
-    <section class="services-section">
+    <section id="service" class="services-section">
       <div class="container services-content">
         <h2>SERVICES</h2>
         <p>We are branding & digital studio from New York</p>
@@ -165,48 +168,33 @@
     </section>
 
     <!-- Portfolio section section -->
-    <section id="Portfolio">
-      <div class="container mt-5">
+    <section id="portfolio">
+      <div class="container mt-5 portfolio-sec">
         <div>
           <div class="portfolio-title">PORTFOLIO</div>
-          <!-- <hr class="port-div" /> -->
 
           <div class="portfolio-subtitle">
             You're going to see we LOVE what we do.
           </div>
+
           <div class="portfolio-btns">
-            <a href="">Show All</a>
-            <a href="">Video</a>
+            <a href="#" class="filter-btn" data-filter="all">Show All</a>
+            <a href="#" class="filter-btn" data-filter="video">Video</a>
           </div>
         </div>
+
         <div class="row mt-4">
-          <div class="col-md-3 mb-4">
-            <img
-              src="portfolio-01.jpg"
-              class="portfolio-img"
-              alt="Portfolio 1"
-            />
+          <div class="col-md-3 mb-4 portfolio-item" data-type="video">
+            <img src="contact us.jpg" class="portfolio-img" alt="Portfolio 1" />
           </div>
-          <div class="col-md-3 mb-4">
-            <img
-              src="portfolio-01.jpg"
-              class="portfolio-img"
-              alt="Portfolio 2"
-            />
+          <div class="col-md-3 mb-4 portfolio-item" data-type="video">
+            <img src="contact us.jpg" class="portfolio-img" alt="Portfolio 2" />
           </div>
-          <div class="col-md-3 mb-4">
-            <img
-              src="portfolio-01.jpg"
-              class="portfolio-img"
-              alt="Portfolio 3"
-            />
+          <div class="col-md-3 mb-4 portfolio-item" data-type="image">
+            <img src="contact us.jpg" class="portfolio-img" alt="Portfolio 3" />
           </div>
-          <div class="col-md-3 mb-4">
-            <img
-              src="portfolio-01.jpg"
-              class="portfolio-img"
-              alt="Portfolio 3"
-            />
+          <div class="col-md-3 mb-4 portfolio-item" data-type="image">
+            <img src="contact us.jpg" class="portfolio-img" alt="Portfolio 4" />
           </div>
         </div>
       </div>
@@ -214,8 +202,8 @@
 
     <!-- Expect section -->
 
-    <section class="container mt-5 text-center">
-      <div class="row justify-content-center mb-4">
+    <section id="expect" class="container mt-5 text-center">
+      <div class="row justify-content-center mb-4 expect-sec">
         <div class="col-lg-9">
           <h2 class="section-title">WHAT TO EXPECT</h2>
 
@@ -378,7 +366,7 @@
           results.
         </p>
         <div class="in-touch">
-          <a href="#" class="btn btn-custom">GET IN TOUCH</a>
+          <a href="#" class="Get-in">GET IN TOUCH</a>
         </div>
       </div>
     </section>
@@ -401,7 +389,7 @@
 
     <!-- Our clients section -->
 
-    <section class="our-clients">
+    <section id="clients" class="our-clients">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -422,7 +410,7 @@
 
     <!-- Testimonials-->
 
-    <section class="tes-section">
+    <section id="testimonials" class="tes-section">
       <div class="container tes-content">
         <i class="awe-icon fa fa-quote-right"></i>
       </div>
@@ -459,7 +447,7 @@
     </section>
 
     <!-- Contact form-->
-    <section id="Contact" class="contact-sec">
+    <section id="contact" class="contact-sec">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -569,14 +557,53 @@
           });
         });
     </script>
-
     <script>
       const hamburger = document.getElementById("hamburger");
       const sidebar = document.getElementById("sidebar");
+      const navbar = document.getElementById("navbar");
+      const links = sidebar.querySelectorAll("a");
 
+      // Toggle sidebar
       hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active"); // Hamburger -> Cross
-        sidebar.classList.toggle("active"); // Sidebar open/close
+        hamburger.classList.toggle("active");
+        sidebar.classList.toggle("active");
+      });
+
+      // Close sidebar when clicking a menu link
+      links.forEach((link) => {
+        link.addEventListener("click", () => {
+          sidebar.classList.remove("active");
+          hamburger.classList.remove("active");
+        });
+      });
+
+      // Shrink navbar on scroll
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("shrink");
+        } else {
+          navbar.classList.remove("shrink");
+        }
+      });
+    </script>
+
+    <script>
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const filter = btn.dataset.filter;
+
+          portfolioItems.forEach((item) => {
+            if (filter === "all" || item.dataset.type === filter) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
       });
     </script>
   </body>

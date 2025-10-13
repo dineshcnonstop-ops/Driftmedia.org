@@ -10,9 +10,43 @@ body {
   overflow-x: hidden;
 }
 
+section {
+  scroll-margin-top: 120px; /* adjust as per navbar height */
+}
+
+.about-us {
+  scroll-margin-top: 150px; /* adjust as per navbar height */
+}
+
+.main {
+  scroll-margin-top: 300px; /* adjust as per navbar height */
+}
+
+/* Hero + Navbar */
+
 .main {
   max-width: 100%;
-  height: 100vh;
+  height: 90vh;
+}
+
+/* Fixed Navbar */
+
+.nav-sec {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  z-index: 900;
+  padding: 25px 50px;
+  transition: all 0.3s ease;
+}
+
+/* Shrink effect on scroll */
+.nav-sec.shrink {
+  padding: 10px 40px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -27,7 +61,12 @@ p {
 .logo img {
   width: 428px;
   margin-right: 10px;
+  transition: all 0.3s ease;
 }
+.nav-sec.shrink .logo img {
+  width: 300px;
+}
+
 .logo-text {
   font-size: 22px;
   font-weight: bold;
@@ -51,11 +90,12 @@ p {
 /* Hamburger */
 .hamburger {
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1300;
   width: 30px;
   height: 25px;
   position: relative;
 }
+
 .hamburger span {
   display: block;
   width: 100%;
@@ -98,23 +138,23 @@ p {
   padding: 10px 20px;
   font-size: 12px;
   font-weight: 800;
-  color: rgb(75, 75, 75);
+  color: #696969;
   text-decoration: none;
   transition: 0.3s;
   border-bottom: 1px solid rgb(41, 41, 41);
+  z-index: 1000;
 }
-
 .sidebar a:nth-child(7) {
   border: unset;
 }
 .sidebar a:hover {
-  color: greenyellow;
+  color: #c6c630;
 }
 
 /* Hero Section */
 .hero {
   text-align: center;
-  margin-top: 4vh;
+  margin-top: 300px;
 }
 
 .hero h2 {
@@ -129,7 +169,6 @@ p {
   font-weight: bold;
   color: #fff;
   display: inline-block;
-  /* margin-top: 20px; */
 }
 
 /* Social Icons */
@@ -140,13 +179,12 @@ p {
 }
 .social-icons a {
   display: block;
-  /* margin: 10px 0; */
 }
 .social-icons img {
   width: 50px;
 }
 
-/* Tablet + Mobile: move social icons bottom center */
+/* Tablet + Mobile */
 @media (max-width: 991px) {
   .social-icons {
     position: static;
@@ -158,10 +196,15 @@ p {
     margin: 0 5px;
   }
   .hero {
-    font-size: 3rem;
+    margin-top: 300px;
   }
-  .hero {
-    margin-top: 8vh;
+  .nav-sec {
+    padding: 25px 20px;
+  }
+  .nav-sec.shrink {
+    padding: 10px 20px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -170,8 +213,9 @@ p {
 .about-section {
   width: 100%;
   height: 100%;
-  padding: 60px 0 180px 20px;
+  padding: 0 20px 180px 20px;
 }
+
 .about-section h2 {
   font-size: 32px;
   font-weight: 800;
@@ -250,6 +294,9 @@ p {
     width: 100%;
     padding-right: 20px;
     position: unset;
+    display: block;
+    margin: 0 auto;
+    padding-top: 50px;
   }
 
   .about-section p {
@@ -262,7 +309,7 @@ p {
   background: url("driftless-media-services.jpg") no-repeat center center/cover;
   color: #fff;
   text-align: center;
-  padding: 100px 20px 60px 20px;
+  padding: 100px 10px 60px 10px;
   background-attachment: fixed;
 }
 
@@ -363,6 +410,10 @@ p {
 
 /* Portfolio section */
 
+.portfolio-sec {
+  padding-top: 100px;
+}
+
 .portfolio-title {
   font-size: 30px;
   font-weight: 900;
@@ -387,6 +438,15 @@ p {
   width: 50px;
 }
 
+.portfolio-item {
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+  font-weight: 900; /* Bold */
+  color: #000; /* Optional: make active color black */
+}
+
 .portfolio-subtitle {
   margin-bottom: 30px;
   margin-top: 30px;
@@ -405,7 +465,10 @@ p {
 
 .portfolio-img {
   width: 100%;
+  border-radius: 10px;
 }
+
+/* Expect section */
 
 .section-title {
   font-weight: 800;
@@ -436,8 +499,6 @@ p {
   margin-top: 30px;
 }
 
-/* Expect section */
-
 .whole-div:hover .step-title h5 {
   color: #aab832;
 }
@@ -453,6 +514,10 @@ p {
 
 .whole-div:hover .expert-sec-para p {
   color: #fff;
+}
+
+.expect-sec {
+  padding-top: 100px;
 }
 
 .section-icons {
@@ -506,7 +571,7 @@ p {
 }
 
 .section-footer p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 25px;
   margin: 20px 0 40px 0;
   font-weight: 300;
@@ -515,6 +580,16 @@ p {
 .in-touch a {
   font-family: "lato";
   font-weight: 400;
+  color: #fff;
+  background-color: #b4bf2c;
+  padding: 12px 30px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.in-touch a:hover {
+  background-color: #000;
   color: #fff;
 }
 
@@ -736,6 +811,11 @@ textarea::placeholder {
   padding: 10px 26px;
   color: #fff;
   border-radius: unset;
+}
+
+.btn-submit:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .form-control {
