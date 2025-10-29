@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&family=Lato:wght@300;400;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -45,7 +47,8 @@ section {
 
 /* Shrink effect on scroll */
 .nav-sec.shrink {
-  padding: 10px 40px;
+  /* padding: 10px 40px; */
+  padding: 10px 0px;
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -287,6 +290,10 @@ p {
     width: 100%;
     padding-right: 20px;
   }
+
+  .about-section {
+    padding: 0 20px 100px 20px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -469,6 +476,12 @@ p {
   border-radius: 10px;
 }
 
+@media screen and (max-width: 991px) {
+  .portfolio-sec {
+    padding-top: unset;
+  }
+}
+
 /* Expect section */
 
 .section-title {
@@ -599,6 +612,10 @@ p {
     flex: 0 0 auto;
     width: 100%;
   }
+
+  .expect-sec {
+    padding-top: unset;
+  }
 }
 
 /* connect with us section */
@@ -695,6 +712,12 @@ p {
 
 .client-img {
   margin-top: 50px;
+}
+
+@media screen and (max-width: 991px) {
+  .our-clients {
+    padding: 60px 0;
+  }
 }
 
 /* Testimonials */
@@ -837,6 +860,12 @@ textarea::placeholder {
 .form-control {
   border-radius: unset;
   padding: 12px 19px;
+}
+
+@media screen and (max-width: 991px) {
+  .contact-sec {
+    padding: 80px 0;
+  }
 }
 
 /* Footer */
