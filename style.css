@@ -189,6 +189,13 @@ p {
 }
 
 /* Tablet + Mobile */
+
+@media (max-width: 1366px) {
+  .hero {
+    margin-top: 240px;
+  }
+}
+
 @media (max-width: 991px) {
   .social-icons {
     position: static;
